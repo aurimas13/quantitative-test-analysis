@@ -92,3 +92,34 @@ This repository provides a **step-by-step** solution to identify errors in a hyp
    ```bash
    git clone https://github.com/yourusername/my-portfolio-validator.git
    cd my-portfolio-validator
+
+2. Create & Activate a Virtual Environment (optional but recommended):
+
+python -m venv .venv
+source .venv/bin/activate   # On macOS/Linux
+# or .venv\\Scripts\\activate on Windows
+
+3. Install required packages:
+
+pip install -r requirements.txt
+
+4. Run the Validator from the command line:
+
+```bash 
+python bash python scripts/run_validator.py --data data/Test.xlsx --report results/report.md --fig results/plots.png python scripts/run_validator.py --data data/Test.xlsx```
+ 
+- `--data data/Test.xlsx`: path to your Excel/CSV file.
+- `--report results/report.md`: saves a Markdown file detailing all flagged issues.
+- `--fig results/plots.png`: saves a bar/pie chart visualization of the issues.
+
+If you omit `--report` or `--fig`, the script will print the summary in the console and display any plots interactively.
+
+
+5. Review the findings:
+
+- Open `results/report.md` to see the detailed list of issues (if you used `--report`).
+- Check `results/plots.png` for the distribution of issue types (if you used `--fig`).
+- If you see errors that reflect actual data problems, correct your data and run again.
+
+6. Optional: Jupyter Notebook
+    - Open `notebooks/portfolio_validation.ipynb` in Jupyter for an interactive exploration and the ability to fix data inline, then re-validate.
