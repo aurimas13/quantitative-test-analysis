@@ -106,7 +106,7 @@ pip install -r requirements.txt
 4. Run the Validator from the command line:
 
 ```bash 
-python bash python scripts/run_validator.py --data data/Test.xlsx --report results/report.md --fig results/plots.png python scripts/run_validator.py --data data/Test.xlsx```
+python bash python scripts/run_validator.py --data data/Test.xlsx --report results/report.md --fig results/plots.png python scripts/run_validator.py --data data/Test.xlsx ```
  
 - `--data data/Test.xlsx`: path to your Excel/CSV file.
 - `--report results/report.md`: saves a Markdown file detailing all flagged issues.
