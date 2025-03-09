@@ -95,9 +95,10 @@ This repository provides a **step-by-step** solution to identify errors in a hyp
 
 2. Create & Activate a Virtual Environment (optional but recommended):
 
-python -m venv .venv
-source .venv/bin/activate   # On macOS/Linux
-# or .venv\\Scripts\\activate on Windows
+    ``` bash
+    python -m venv .venv
+    source .venv/bin/activate   # On macOS/Linux
+    # or .venv\\Scripts\\activate on Windows
 
 3. Install required packages:
 
@@ -113,7 +114,7 @@ python scripts/run_validator.py --data data/Test.xlsx --report results/report.md
 - `--report results/report.md`: saves a Markdown file detailing all flagged issues.
 - `--fig results/plots.png`: saves a bar/pie chart visualization of the issues.
 
-If you omit `--report` or `--fig`, the script will print the summary in the console and display any plots interactively.
+    If you omit `--report` or `--fig`, the script will print the summary in the console and display any plots interactively.
 
 
 5. Review the findings:
