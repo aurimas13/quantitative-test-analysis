@@ -31,6 +31,7 @@ class PortfolioValidator:
         self.error_reports = {}
         self.summary = {}
 
+
     def load_data(self, data_path: str) -> None:
         """
         Load portfolio data from file.
@@ -47,6 +48,18 @@ class PortfolioValidator:
                 self.df = pd.read_csv(data_path, sep='\t')
             else:
                 raise ValueError(f"Unsupported file format: {data_path}")
+
+            # Strip column names (removes leading/trailing spaces)
+            self.df.columns = self.df.columns.str.strip()
+
+            # If your real file sometimes has 'P_Ticket' or 'P_Ticker ':
+            rename_map = {}
+            if 'P_Ticket' in self.df.columns:
+                rename_map['P_Ticket'] = 'P_Ticker'
+            if 'P_Ticker ' in self.df.columns:
+                rename_map['P_Ticker '] = 'P_Ticker'
+            if rename_map:
+                self.df.rename(columns=rename_map, inplace=True)
 
             # Convert date column to datetime if present
             if 'Date' in self.df.columns:
